@@ -20,7 +20,7 @@ def getAPIData(token):
 	return data
 
 def formatOutput(data):
-	tags = '"username="%s"'%(data['account']['username'])
+	tags = 'username="%s"'%(data['account']['username'])
 	string = ""
 	string += 'slushpool_account_unconfirmed{%s} %s\n'%(tags, data['account']['unconfirmed_reward'])
 	string += 'slushpool_account_confirmed{%s} %s\n'%(tags, data['account']['confirmed_reward'])
