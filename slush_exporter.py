@@ -52,6 +52,7 @@ def formatOutput(data):
 
 class MetricsHandler(tornado.web.RequestHandler):
 	def get(self):
+	        self.set_header("Content-Type", 'text/plain; charset="utf-8"')
 		token=self.get_argument("token", None, True)
 		data = getAPIData(token)
 		self.write(formatOutput(data))
